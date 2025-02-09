@@ -6,4 +6,4 @@ export * from './driver-axon-pull-client/src/index';
 export * from './driver-axon-push-client/src/index';
 
 export * from './driver-axon-push-server/src/index';
-export * from './driver-axon-push-server/src/index';
+export * from './driver-axon-pull-server/src/index';
