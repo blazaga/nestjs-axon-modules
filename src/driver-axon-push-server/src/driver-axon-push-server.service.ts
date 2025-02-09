@@ -12,10 +12,6 @@ export class DriverAxonPushServerService {
 
   onModuleInit() {
     this.sock.bind(this.options.server_port, this.options.server_address);
-    this.logger.log(
-      `Orchestrator started on ${this.options.server_address}:${this.options.server_port}`
-    );
-    this.interval = setInterval(this.run.bind(this), 1000);
   }
 
   onModuleDestroy() {
@@ -26,18 +22,6 @@ export class DriverAxonPushServerService {
     this.sock.send({
       server_name: this.options.server_name,
       ...message,
-    });
-  }
-
-  run() {
-    const count = this.counter++;
-    this.logger.log('Sending heartbeat ' + count);
-    this.sock.send({
-      type: 'HEARTBEAT',
-      payload: {
-        date: new Date().toISOString(),
-        count,
-      },
     });
   }
 }
