@@ -15,6 +15,7 @@ export class DriverAxonPushServerModule {
         },
         DriverAxonPushServerService,
       ],
+      exports: [DriverAxonPushServerService],
     };
   }
 }
